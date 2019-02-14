@@ -42,6 +42,8 @@ sudo apt install \
   libncurses5-dev \
   libncursesw5-dev \
   libsqlite3-dev\
+  libxml2 libxml2-dev \
+  libxslt1-dev \
   llvm \
   python-openssl \
   tk-dev \
@@ -94,3 +96,10 @@ fi
 # Use pyenv for python installation management
 curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
 git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
+
+# Install Docker
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+sudo curl -L "https://github.com/docker/compose/releases/download/1.23.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+sudo usermod -aG docker $USER
