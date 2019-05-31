@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/home/rtownley/Projects/ada/NJ/editorial/templates/Editorial'
+let g:netrw_dirhist_2='/home/rtownley/Clients/HAF/backend/app/public/views'
+let g:netrw_dirhist_3='/home/rtownley/Projects/ada/NJ/basement/templates/admin'
+let g:netrw_dirhist_4='/home/rtownley/Projects/ada/NJ/racetracker/models'
+let g:netrw_dirhist_5='/home/rtownley/Projects/nj_scripts/ballast/PolicyIndexPPT'
+let g:netrw_dirhist_6='/home/rtownley/Projects/ada/NJ/presentations/utils'
+let g:netrw_dirhist_7='/home/rtownley/Projects/ada/NJ/ballast/management/commands'
+let g:netrw_dirhist_8='/home/rtownley/Projects/dot_files'

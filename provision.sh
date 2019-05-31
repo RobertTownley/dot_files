@@ -33,6 +33,8 @@ sudo apt install xclip  # Command line utility for copying to system clipboard
 sudo apt install \
   make \
   build-essential \
+  exfat-fuse \
+  exfat-utils \
   liblzma-dev \
   libbz2-dev \
   libffi-dev \
