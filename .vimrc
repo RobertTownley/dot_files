@@ -10,14 +10,17 @@ Plugin 'gmarik/Vundle.vim'
 
 " add all your plugins here (note older versions of Vundle
 " used Bundle instead of Plugin)
-Plugin 'vim-scripts/indentpython.vim'
 " Plugin 'vim-syntastic/syntastic'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'posva/vim-vue'
+Plugin 'pangloss/vim-javascript'
+Plugin 'prettier/vim-prettier'
+Plugin 'mxw/vim-jsx'
 Plugin 'w0rp/ale'
-Plugin 'nvie/vim-flake8'
 Plugin 'flazz/vim-colorschemes'
+Plugin 'mattn/emmet-vim'
 
-" ...
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -41,11 +44,26 @@ set number
 " Show the currently-typed command
 set showcmd
 
+" Ale
+let g:airline#extensions#ale#enabled = 1
+
+" Emmet
+let g:user_emmet_leader_key='<Tab>'
+
 " Highlight searches as they're typed
 set incsearch " highlight characters as they're entered
 set hlsearch " highlight matches
 " map CTRL+L to unhighlighting the current search
 nnoremap <silent> <C-l> :nohl<CR><C-l>
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 " Default filetypes
 set tabstop=2 |
@@ -62,14 +80,6 @@ au BufNewFile,BufRead *.py
     \ set expandtab |
     \ set autoindent |
     \ set fileformat=unix
-
-" When saving a python file, automatically call Flake8
-autocmd BufWritePost *.py call Flake8()
-
-" Only call ALELint manually
-let g:ale_lint_on_enter = 0
-let g:ale_lint_on_text_changed = 0
-let g:ale_lint_on_save = 0
 
 " Javascript
 au BufNewFile,BufRead *.js
