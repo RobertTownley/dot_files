@@ -10,7 +10,6 @@ Plugin 'gmarik/Vundle.vim'
 
 " add all your plugins here (note older versions of Vundle
 " used Bundle instead of Plugin)
-" Plugin 'vim-syntastic/syntastic'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'posva/vim-vue'
@@ -50,6 +49,10 @@ set showcmd
 
 " Ale
 let g:airline#extensions#ale#enabled = 1
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'javascript': ['eslint'],
+\}
 
 " Emmet
 let g:user_emmet_leader_key='<Tab>'
@@ -59,15 +62,6 @@ set incsearch " highlight characters as they're entered
 set hlsearch " highlight matches
 " map CTRL+L to unhighlighting the current search
 nnoremap <silent> <C-l> :nohl<CR><C-l>
-
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
 
 " Default filetypes
 set tabstop=2 |
