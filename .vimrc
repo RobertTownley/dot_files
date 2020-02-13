@@ -17,9 +17,13 @@ Plugin 'posva/vim-vue'
 Plugin 'pangloss/vim-javascript'
 Plugin 'prettier/vim-prettier'
 Plugin 'mxw/vim-jsx'
+Plugin 'leafgarland/typescript-vim'
 Plugin 'w0rp/ale'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'mattn/emmet-vim'
+Plugin 'cespare/vim-toml'
+Plugin 'psf/black'
+Plugin 'rust-lang/rust.vim'
 
 
 " All of your Plugins must be added before the following line
@@ -76,10 +80,11 @@ au BufNewFile,BufRead *.py
     \ set tabstop=4 |
     \ set softtabstop=4 |
     \ set shiftwidth=4 |
-    \ set textwidth=119 |
+    \ set textwidth=500 |
     \ set expandtab |
     \ set autoindent |
     \ set fileformat=unix
+autocmd BufWritePre *.py execute ':Black'
 
 " Javascript
 au BufNewFile,BufRead *.js
