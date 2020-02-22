@@ -47,11 +47,15 @@ set number
 " Show the currently-typed command
 set showcmd
 
+" Netrw file browser
+" Open files in new horizontal split
+let g:netrw_browse_split = 1
+
 " Ale
 let g:airline#extensions#ale#enabled = 1
 
 " Emmet
-let g:user_emmet_leader_key='<Tab>'
+let g:user_emmet_leader_key='<C-E>'
 
 " Highlight searches as they're typed
 set incsearch " highlight characters as they're entered
