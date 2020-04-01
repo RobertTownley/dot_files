@@ -10,24 +10,30 @@ Plugin 'gmarik/Vundle.vim'
 
 " add all your plugins here (note older versions of Vundle
 " used Bundle instead of Plugin)
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+Plugin 'cespare/vim-toml'
 Plugin 'posva/vim-vue'
 Plugin 'pangloss/vim-javascript'
 Plugin 'prettier/vim-prettier'
 Plugin 'mxw/vim-jsx'
 Plugin 'leafgarland/typescript-vim'
-Plugin 'w0rp/ale'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'mattn/emmet-vim'
-Plugin 'cespare/vim-toml'
+Plugin 'nvie/vim-flake8'
 Plugin 'psf/black'
 Plugin 'rust-lang/rust.vim'
-
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'vim-scripts/indentpython.vim'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'w0rp/ale'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
+"
+" Syntax Highlighting
+let python_highlight_all=1
+syntax on
 
 " Display
 colorscheme badwolf
