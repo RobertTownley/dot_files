@@ -109,5 +109,3 @@ au BufNewFile,BufRead *.kt set filetype=kotlin
 let g:LanguageClient_serverCommands = {
     \ 'kotlin': ["kotlin-language-server"],
     \ }
-" PolyGlot Plugin
-" let g:polyglot_disabled = ['sh']
