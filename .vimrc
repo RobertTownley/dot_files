@@ -14,23 +14,26 @@ Plugin 'cespare/vim-toml'
 Plugin 'posva/vim-vue'
 Plugin 'pangloss/vim-javascript'
 Plugin 'prettier/vim-prettier'
-Plugin 'mxw/vim-jsx'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'mattn/emmet-vim'
 Plugin 'nvie/vim-flake8'
 Plugin 'psf/black'
+Plugin 'sheerun/vim-polyglot'
 Plugin 'rust-lang/rust.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'vim-syntastic/syntastic'
+Plugin 'udalov/kotlin-vim'
 Plugin 'w0rp/ale'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
+filetype on
 filetype plugin indent on    " required
-"
+
 " Syntax Highlighting
 let python_highlight_all=1
 syntax on
@@ -59,6 +62,7 @@ let g:netrw_browse_split = 1
 
 " Ale
 let g:airline#extensions#ale#enabled = 1
+let g:ale_fix_on_safe = 1
 
 " Emmet
 let g:user_emmet_leader_key='<C-E>'
@@ -74,6 +78,7 @@ set tabstop=2 |
 set softtabstop=2 |
 set shiftwidth=2
 set expandtab
+set autoindent
 
 " Python
 au BufNewFile,BufRead *.py
@@ -87,7 +92,7 @@ au BufNewFile,BufRead *.py
 autocmd BufWritePre *.py execute ':Black'
 
 " Javascript
-au BufNewFile,BufRead *.js
+au BufNewFile,BufRead *.js|javascript.jsx
     \ set tabstop=2 |
     \ set softtabstop=2 |
     \ set shiftwidth=2
@@ -98,3 +103,9 @@ au BufNewFile,BufRead *.html
     \ set softtabstop=2 |
     \ set shiftwidth=2 |
     \ set expandtab
+
+" Kotlin
+au BufNewFile,BufRead *.kt set filetype=kotlin
+let g:LanguageClient_serverCommands = {
+    \ 'kotlin': ["kotlin-language-server"],
+    \ }
