@@ -1,0 +1,21 @@
+{
+  "coc.preferences.formatOnSaveFiletypes": [
+    "css",
+    "javascript",
+    "json",
+    "markdown",
+    "python",
+    "react",
+    "rust",
+    "typescript",
+    "typescriptreact"
+  ],
+  "pyright.organizeimports.provider": "pyright",
+  "python.sortImports.args": ["isort"],
+  "python.formatting.provider": "black",
+  "python.linting.enabled": true,
+  "python.linting.pylintArgs": ["--load-plugins=pylint_django"],
+  "python.linting.flake8Enabled": true,
+  "python.linting.pylintEnabled": true,
+  "python.venvPath": "${env:HOME}/.pyenv/versions"
+}
